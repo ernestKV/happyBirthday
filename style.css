@@ -1,0 +1,46 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background: rgba(246, 102, 206, 0.68);
+    overflow: hidden;
+
+}
+span{
+    white-space: nowrap;
+}
+h1 {
+
+position: absolute;
+left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    text-align: center;
+    font-size: 7.5vw;
+    font-family: sans-serif;
+    color: white;
+
+}
+
+canvas {
+    position: absolute;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+}
+a{
+    font-family: sans-serif;
+    text-decoration: none;
+    z-index: 3;
+    color:white;
+    cursor:pointer;
+    position: fixed;
+    top:30px;
+    right:30px;
+    font-size: 2vw;
+    border:2px solid white;
+    border-radius: 20px;
+    padding:7px 15px;
+}

@@ -1,0 +1,264 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    position: relative;
+    background: rgba(246, 102, 206, 0.68);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+* {
+    position: absolute;
+}
+
+*:before,
+*:after {
+    content: "";
+    position: absolute;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+
+}
+
+.cake {
+    width: 80%;
+    height: 80%;
+    left: 10%;
+    bottom: 15%;
+}
+
+.filling {
+    height: 10px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    top: 50%;
+}
+
+.tier {
+    left: 10%;
+    width: 80%;
+    height: 50px;
+    border-radius: 5px;
+}
+.tier .icing-group {
+    width: 100%;
+    height: 30px;
+    overflow: hidden;
+}
+.tier .icing-group .icing {
+    border-radius: 0 0 20px 20px;
+    width: 40px;
+    height: 20px;
+    background-color: #f4f5fb;
+}
+.tier:after {
+    border-radius: 0 5px 5px 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.tier-1 {
+    background-color: #f2abe7;
+    bottom: 0;
+}
+.tier-1 .filling {
+    background-color: #eb7fda;
+}
+
+.tier-2 {
+    bottom: 50px;
+    width: 60%;
+    height: 45px;
+    left: 20%;
+    background-color: #9fa3ec;
+}
+.tier-2 .filling {
+    background-color: #747ae4;
+}
+
+.tier-3 {
+    bottom: 95px;
+    width: 40%;
+    height: 40px;
+    left: 30%;
+    background-color: #86d2e1;
+}
+.tier-3 .filling {
+    background-color: #5dc3d7;
+}
+
+.icing:nth-child(1) {
+    left: -20px;
+}
+
+.icing:nth-child(2) {
+    left: 10px;
+}
+
+.icing:nth-child(3) {
+    left: 40px;
+}
+
+.icing:nth-child(4) {
+    left: 70px;
+}
+
+.icing:nth-child(5) {
+    left: 100px;
+}
+
+.icing:nth-child(6) {
+    left: 130px;
+}
+
+.icing:nth-child(7) {
+    left: 160px;
+}
+
+.icing:nth-child(8) {
+    left: 190px;
+}
+
+.icing:nth-child(9) {
+    left: 220px;
+}
+
+.candles {
+    width: 40%;
+    left: 30%;
+    height: 30px;
+    bottom: 135px;
+}
+.candles .candle {
+    background-color: #f2abe7;
+    left: 27px;
+    width: 10px;
+    height: 25px;
+    bottom: 0;
+}
+canvas {
+    position: absolute;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+}
+.candles .candle:after {
+    width: 50%;
+    height: 100%;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.candles .candle .flame {
+    width: 15px;
+    height: 15px;
+    bottom: 30px;
+    left: -3px;
+}
+.candles .candle .flame .flame-in {
+    width: 100%;
+    height: 100%;
+    background-color: #fec31e;
+    border-radius: 0 50% 50%;
+    transform: rotate(45deg);
+    -webkit-animation: flame 2s linear infinite;
+    animation: flame 2s linear infinite;
+}
+
+
+
+@-webkit-keyframes drift {
+    0% {
+        transform: skewY(10deg) translate3d(-250%, 0, 0);
+    }
+    100% {
+        transform: skewY(-10deg) translate3d(250%, 0, 0);
+    }
+}
+
+@keyframes drift {
+    0% {
+        transform: skewY(10deg) translate3d(-250%, 0, 0);
+    }
+    100% {
+        transform: skewY(-10deg) translate3d(250%, 0, 0);
+    }
+}
+@-webkit-keyframes driftRotate {
+    0% {
+        transform: rotateX(0);
+    }
+    100% {
+        transform: rotateX(360deg);
+    }
+}
+@keyframes driftRotate {
+    0% {
+        transform: rotateX(0);
+    }
+    100% {
+        transform: rotateX(360deg);
+    }
+}
+.cake{
+    scale:2.1;
+    z-index: 3;
+}
+.modal{
+    padding: 10vw 25vw;
+    background: rgba(218, 111, 196, 0.97);
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    border-radius: 20px;
+font-size: 1.7vw;
+    color:white;
+font-family: sans-serif;
+text-align: center;
+white-space: nowrap;
+    gap:30px;
+    display: none;
+z-index: 5;
+    transition: ease-in-out .2s;
+}
+.cross {cursor: pointer; position: absolute; top: 10%; left: 5%;}
+.cross:before, .cross:after {content: ""; position: absolute; width: 2vw; height: 4px; background: #ffffff;}
+.cross:before {transform: rotate(45deg);}
+.cross:after {transform: rotate(-45deg);}
+.text{
+    text-align: center;
+    position: absolute;
+    left:5%;
+   pointer-events: none;
+    top:30%;
+    transform:translate(-50%,-50%);
+
+}
